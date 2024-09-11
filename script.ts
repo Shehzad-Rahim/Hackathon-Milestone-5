@@ -87,10 +87,11 @@ document.getElementById("printPDF")?.addEventListener("click", function () {
         color: gold;
         font-family: Arial, Helvetica, sans-serif;
         padding: 20px;
-        max-width: 60%;
+        max-width: 80%;
         margin: 20px auto;
     }
     .resume-content {
+        max-width: 70%;
         background-color: black;
         padding: 20px 30px;
         border-radius: 8px;
