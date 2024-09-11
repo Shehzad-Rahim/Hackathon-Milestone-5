@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Preview</title>
+    <style>
+      body {
+        background-color: black;
+        color: gold;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        max-width: 60%;
+        margin: 20px auto;
+      }
+      .resume-content {
+        background-color: black;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 2px 0px 10px 7px gold;
+      }
+      .resume-content h1 {
+        text-align: center;
+      }
+      .resume-content p {
+        margin-bottom: 10px;
+        border-bottom: 1px solid gold;
+        font-size: 18px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="resumeContent" class="resume-content"></div>
+    <footer><h4>By Shehzad Rahim 💛</h4></footer>
+    <script>
+      // Extract query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = urlParams.get("name") || "";
+      const email = urlParams.get("email") || "";
+      const phone = urlParams.get("phone") || "";
+      const skills = urlParams.get("skills") || "";
+      const experience = urlParams.get("experience") || "";
+      const education = urlParams.get("education") || "";
+      const summary = urlParams.get("summary") || "";
+
+      // Display content
+      const resumeContent = document.getElementById("resumeContent");
+      resumeContent.innerHTML = `
+
+            <h1>Your Resume</h1>
+            <p><strong>${name}</strong></p>
+            <p><strong>${email}</strong></p>
+            <p><strong>${phone}</strong></p>
+            <p><strong>${skills}</strong></p>
+            <p><strong>${experience}</strong></p>
+            <p><strong>${education}</strong></p>
+            <p><strong>${summary}</strong></p>
+        `;
+    </script>
+  </body>
+</html>
