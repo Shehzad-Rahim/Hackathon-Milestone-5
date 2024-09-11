@@ -65,7 +65,7 @@ var _a, _b, _c, _d, _e, _f;
     var buttons = document.querySelectorAll("button, #generatedLink, #copyLink, #resumeTitle");
     buttons.forEach(function (button) { return button.style.display = "none"; });
     var style = document.createElement("style");
-    style.innerHTML = "\n    body {\n        background-color: black;\n        color: gold;\n        font-family: Arial, Helvetica, sans-serif;\n        padding: 20px;\n        max-width: 60%;\n        margin: 20px auto;\n    }\n    .resume-content {\n        background-color: black;\n        padding: 20px 30px;\n        border-radius: 8px;\n        box-shadow: 2px 0px 10px 7px gold;\n    }\n    .resume-content h1{\n        text-align: center;\n    }\n    .resume-content p {\n        margin-bottom: 10px;\n        border-bottom: 1px solid gold;\n        font-size: 18px;\n        font-style: italic;\n    }\n  ";
+    style.innerHTML = "\n    body {\n        background-color: black;\n        color: gold;\n        font-family: Arial, Helvetica, sans-serif;\n        padding: 20px;\n        max-width: 80%;\n        margin: 20px auto;\n    }\n    .resume-content {\n    max-width: 80%;\n    background-color: black;\n        padding: 20px 30px;\n        border-radius: 8px;\n        box-shadow: 2px 0px 10px 7px gold;\n    }\n    .resume-content h1{\n        text-align: center;\n    }\n    .resume-content p {\n        margin-bottom: 10px;\n        border-bottom: 1px solid gold;\n        font-size: 18px;\n        font-style: italic;\n    }\n  ";
     document.head.appendChild(style);
     // Print only the resume
     var resumeHtml = resumeContent.innerHTML;
