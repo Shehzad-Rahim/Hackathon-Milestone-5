@@ -88,7 +88,7 @@ button:hover {
 }
 
 #linkBtn{
-    /* display: none; */
+    display: none;
 }
 
 /* Resume container styling */
@@ -97,6 +97,13 @@ button:hover {
     padding: 20px;
     background: black;
     border-radius: 8px;
+}
+
+.resume-container hr{
+    background-color: gold;
+    height: 1px;
+    box-shadow: 1px 0px 10px 3px gold;
+    border: none;
 }
 
 /* Resume content styling */
