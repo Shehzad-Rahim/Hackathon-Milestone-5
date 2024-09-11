@@ -10,6 +10,7 @@ document.getElementById("generate")?.addEventListener("click", function () {
  
 
   if (name && email && phone && skills && experience && education && summary) {
+    (document.getElementById("resumeTitle") as HTMLElement).textContent = `${name}'s Resume`;
     (document.getElementById("outputName") as HTMLElement).textContent = `Name: ${name}`;
     (document.getElementById("outputEmail") as HTMLElement).textContent = `Email: ${email}`;
     (document.getElementById("outputPhone") as HTMLElement).textContent = `Phone: ${phone}`;
