@@ -43,23 +43,7 @@ var _a, _b, _c, _d, _e, _f;
     document.getElementById("updateButton").style.display = "none";
     alert("Your changes have been saved!");
 });
-//Sharable link with the resume content
-// document.getElementById("generateLink")?.addEventListener("click", function () {
-//   const name = (document.getElementById("outputName") as HTMLElement).textContent;
-//   const email = (document.getElementById("outputEmail") as HTMLElement).textContent;
-//   const phone = (document.getElementById("outputPhone") as HTMLElement).textContent;
-//   const skills = (document.getElementById("outputSkills") as HTMLElement).textContent;
-//   const experience = (document.getElementById("outputExperience") as HTMLElement).textContent;
-//   const education = (document.getElementById("outputEducation") as HTMLElement).textContent;
-//   const summary = (document.getElementById("outputSummary") as HTMLElement).textContent;
-//   const baseUrl = window.location.href.split('?')[0];
-//   const link = `${baseUrl}?name=${encodeURIComponent(name ?? '')}&email=${encodeURIComponent(email ?? '')}&phone=${encodeURIComponent(phone ?? '')}&skills=${encodeURIComponent(skills ?? '')}&experience=${encodeURIComponent(experience ?? '')}&education=${encodeURIComponent(education ?? '')}&summary=${encodeURIComponent(summary ?? '')}`;
-//   //Generated link
-//   const generatedLinkElement = document.getElementById("generatedLink") as HTMLElement;
-//   generatedLinkElement.textContent = link;
-//   //Copy Link button after generating the link
-//   (document.getElementById("copyLink") as HTMLElement).style.display = "inline-block";
-// });
+
 //generated link to clipboard
 (_d = document.getElementById("copyLink")) === null || _d === void 0 ? void 0 : _d.addEventListener("click", function () {
     var generatedLinkElement = document.getElementById("generatedLink");
