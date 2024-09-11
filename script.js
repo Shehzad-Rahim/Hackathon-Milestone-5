@@ -9,6 +9,7 @@ var _a, _b, _c, _d, _e, _f;
     var education = document.getElementById("education").value;
     var summary = document.getElementById("summary").value;
     if (name && email && phone && skills && experience && education && summary) {
+         document.getElementById("resumeTitle").textContent = `${name}'s Resume`;
         document.getElementById("outputName").textContent = "Name: ".concat(name);
         document.getElementById("outputEmail").textContent = "Email: ".concat(email);
         document.getElementById("outputPhone").textContent = "Phone: ".concat(phone);
