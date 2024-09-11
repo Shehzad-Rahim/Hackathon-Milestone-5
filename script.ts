@@ -10,7 +10,6 @@ document.getElementById("generate")?.addEventListener("click", function () {
  
 
   if (name && email && phone && skills && experience && education && summary) {
-    (document.getElementById("resumeTitle") as HTMLElement).textContent = `${name}'s Resume`;
     (document.getElementById("outputName") as HTMLElement).textContent = `Name: ${name}`;
     (document.getElementById("outputEmail") as HTMLElement).textContent = `Email: ${email}`;
     (document.getElementById("outputPhone") as HTMLElement).textContent = `Phone: ${phone}`;
@@ -45,13 +44,33 @@ document.getElementById("updateButton")?.addEventListener("click", function () {
     (element as HTMLElement).contentEditable = "false";
   });
 
+  // Show edit button and hide update button
   (document.getElementById("editButton") as HTMLButtonElement).style.display = "inline-block";
   (document.getElementById("updateButton") as HTMLButtonElement).style.display = "none";
 
   alert("Your changes have been saved!");
 });
 
+//Sharable link with the resume content
+// document.getElementById("generateLink")?.addEventListener("click", function () {
+//   const name = (document.getElementById("outputName") as HTMLElement).textContent;
+//   const email = (document.getElementById("outputEmail") as HTMLElement).textContent;
+//   const phone = (document.getElementById("outputPhone") as HTMLElement).textContent;
+//   const skills = (document.getElementById("outputSkills") as HTMLElement).textContent;
+//   const experience = (document.getElementById("outputExperience") as HTMLElement).textContent;
+//   const education = (document.getElementById("outputEducation") as HTMLElement).textContent;
+//   const summary = (document.getElementById("outputSummary") as HTMLElement).textContent;
 
+//   const baseUrl = window.location.href.split('?')[0];
+//   const link = `${baseUrl}?name=${encodeURIComponent(name ?? '')}&email=${encodeURIComponent(email ?? '')}&phone=${encodeURIComponent(phone ?? '')}&skills=${encodeURIComponent(skills ?? '')}&experience=${encodeURIComponent(experience ?? '')}&education=${encodeURIComponent(education ?? '')}&summary=${encodeURIComponent(summary ?? '')}`;
+
+//   //Generated link
+//   const generatedLinkElement = document.getElementById("generatedLink") as HTMLElement;
+//   generatedLinkElement.textContent = link;
+
+//   //Copy Link button after generating the link
+//   (document.getElementById("copyLink") as HTMLElement).style.display = "inline-block";
+// });
 
 //generated link to clipboard
 document.getElementById("copyLink")?.addEventListener("click", function () {
@@ -74,8 +93,8 @@ document.getElementById("printPDF")?.addEventListener("click", function () {
 
 
   // Hide buttons during print
-  const buttons:any = document.querySelectorAll("button, #generatedLink, #copyLink, #resumeTitle");
-  buttons.forEach((button: { style: { display: string; }; }) => button.style.display = "none");
+  const buttons: any = document.querySelectorAll("button, #generatedLink, #copyLink, #resumeTitle");
+  buttons.forEach(button => button.style.display = "none");
 
   
   const style = document.createElement("style");
@@ -118,19 +137,29 @@ document.getElementById("printPDF")?.addEventListener("click", function () {
 
   // Restore original content and buttons
   document.body.innerHTML = originalContent;
-  buttons.forEach((button: { style: { display: string; }; }) => button.style.display = "inline-block");
+  buttons.forEach(button => button.style.display = "inline-block");
 });
 
-//Shortned url
-const link = "https://shorturl.at/yJhqH"
+
 
 document.getElementById("generateLink")?.addEventListener("click", function () {
+  const name = (document.getElementById("outputName") as HTMLElement).textContent;
+  const email = (document.getElementById("outputEmail") as HTMLElement).textContent;
+  const phone = (document.getElementById("outputPhone") as HTMLElement).textContent;
+  const skills = (document.getElementById("outputSkills") as HTMLElement).textContent;
+  const experience = (document.getElementById("outputExperience") as HTMLElement).textContent;
+  const education = (document.getElementById("outputEducation") as HTMLElement).textContent;
+  const summary = (document.getElementById("outputSummary") as HTMLElement).textContent;
+
+  // Create a URL with query parameters
+  const baseUrl = window.location.origin + '/resumePreview.html';
+  const link = `${baseUrl}?name=${encodeURIComponent(name ?? '')}&email=${encodeURIComponent(email ?? '')}&phone=${encodeURIComponent(phone ?? '')}&skills=${encodeURIComponent(skills ?? '')}&experience=${encodeURIComponent(experience ?? '')}&education=${encodeURIComponent(education ?? '')}&summary=${encodeURIComponent(summary ?? '')}`;
+
   // Display the generated link
   const generatedLinkElement = document.getElementById("generatedLink") as HTMLElement;
   generatedLinkElement.textContent = link;
 
-
   // Show the "Copy Link" button after generating the link
   const copyLinkButton = document.getElementById("copyLink") as HTMLElement;
-  copyLinkButton.style.display = "inline-block";  
+  copyLinkButton.style.display = "inline-block";  // Make the button visible
 });
